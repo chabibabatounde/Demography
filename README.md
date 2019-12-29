@@ -26,6 +26,9 @@ To add data, we make PUT type queries. One or more data can be inserted from an 
 
 - Add an event : 
 http://localhost:8080/Demography/save
+
+request data exemple:
+
 ```json
 {
       "id": 1,
@@ -43,6 +46,7 @@ http://localhost:8080/Demography/save
 - Add multiple events : 
 http://localhost:8080/Demography/saveAll
 
+request data exemple:
 
 ```json
 [
@@ -78,6 +82,9 @@ http://localhost:8080/Demography/count
 
 - To  get record by event type: 
 http://localhost:8080/Demography/findAll
+
+request response exemple:
+
 ```json
 {
     "content": [
@@ -139,6 +146,8 @@ http://localhost:8080/Demography/findAll
 - To  get record by event Id: 
 http://localhost:8080/Demography/findById/{id}
 ({id} represente record identifier)
+
+request response exemple:
 ```json
 {
     "id": "1",
@@ -158,6 +167,8 @@ http://localhost:8080/Demography/findByPersonName/{personName}
 
 *e.g:* http://localhost:8080/Demography/findByPersonName/chabi_rodolpo
 ({personName} represente the person name)
+
+request response exemple:
 ```json
 {
     "id": "1",
@@ -181,6 +192,7 @@ http://localhost:8080/Demography/findByVilleNomVilleAndEventDateBetween/{nomVill
       {fromDate} represente start date
       {toDate} represente end date
 )
+request response exemple:
 ```json
 [
     {
@@ -204,6 +216,24 @@ You have also methods to :
 ```
 ### Upadte ###
 
+To set data we have PUT request like :
+
+http://localhost:8080/Demography/update
+
+request data exemple:
+```json
+{
+      "id": 1,
+      "eventDate":"2019-09-25",
+      "personName": "chabi rodolpho",
+      "value": 1,
+      "ville" :{
+        "lat" : 0.02,
+        "lng" : 3.005,
+        "nomVille" : "Paris"
+      }
+  }
+```
 
 
 ### Delete ###
