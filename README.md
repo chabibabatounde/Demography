@@ -1,5 +1,7 @@
 # Demography
 This API is used to record demographic events (Births and Deaths).
+This API uses Elasticsearch to store data. We used a docker image. To configure the data source, you have to go to the file *"application.properties"* 
+
 ## Data structure ##
 To store the data, we chose to create two entities. Here is their organization
 
@@ -69,6 +71,7 @@ http://localhost:8080/Demography/saveAll
   ]
 ```
 ### Read ###
+To read the data, we have many GET request
 
 - To count the number of registration : 
 http://localhost:8080/Demography/count
@@ -152,6 +155,7 @@ http://localhost:8080/Demography/findById/{id}
 
 - To get record by name: 
 http://localhost:8080/Demography/findByPersonName/{personName}
+
 *e.g:* http://localhost:8080/Demography/findByPersonName/chabi_rodolpo
 ({personName} represente the person name)
 ```json
@@ -170,6 +174,7 @@ http://localhost:8080/Demography/findByPersonName/{personName}
 
 - To get record between two dates filter by City : 
 http://localhost:8080/Demography/findByVilleNomVilleAndEventDateBetween/{nomVille}/{fromDate}/{toDate}
+
 *e.g:* http://localhost:8080/Demography/findByVilleNomVilleAndEventDateBetween/Paris/2019-09-22/2019-09-23
 (
       {nomVille} represente the city name
@@ -196,4 +201,11 @@ You have also methods to :
 - get record by city
 - get record by event Date for all cities
 
+```
+### Upadte ###
 
+
+
+### Delete ###
+To delete we have DELETE request like :
+http://localhost:8080/Demography/delete/{Id}
