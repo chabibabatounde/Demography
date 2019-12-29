@@ -2,6 +2,7 @@
 This API is used to record demographic events (Births and Deaths).
 ## Data structure ##
 To store the data, we chose to create two entities. Here is their organization
+
 *Demography.java*
 ```java
 private String id;
